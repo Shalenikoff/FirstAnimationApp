@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kME-Us-fjl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kME-Us-fjl" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="65" y="150" width="245" height="140"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Bow-vV-nip">
@@ -65,17 +65,29 @@
                                     <constraint firstAttribute="height" constant="140" id="lfU-Ba-CVx"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9n-um-wjy" customClass="SpringButton" customModule="FirstAnimationApp" customModuleProvider="target">
+                                <rect key="frame" x="75" y="658" width="225" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="animationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jR8-aP-BRu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="a9n-um-wjy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2gg-Us-AYe"/>
+                            <constraint firstItem="a9n-um-wjy" firstAttribute="width" secondItem="Bow-vV-nip" secondAttribute="width" id="9c3-oj-Bhr"/>
                             <constraint firstItem="kME-Us-fjl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="j5t-Um-NTe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a9n-um-wjy" secondAttribute="bottom" constant="90" id="oOx-Rd-cTW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kME-Us-fjl" secondAttribute="trailing" constant="65" id="zju-Oi-zYF"/>
                             <constraint firstItem="kME-Us-fjl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="zuJ-fx-qGW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="animatedView" destination="kME-Us-fjl" id="OqV-wL-m06"/>
+                        <outlet property="animationButton" destination="a9n-um-wjy" id="ERT-U9-2ek"/>
                         <outlet property="curveLabel" destination="vbi-P3-oXc" id="QzS-3t-yHt"/>
                         <outlet property="delayLabel" destination="Xd8-y1-eVD" id="smr-AO-77Y"/>
                         <outlet property="durationLabel" destination="0kq-Dm-KBW" id="EDZ-hQ-DVV"/>
