@@ -39,22 +39,29 @@ class ViewController: UIViewController {
     @IBAction func animationButtonPressed(_ sender: SpringButton) {
         sender.pulsate()
         
-        slideLeft()
+        pop()
         
     }
     
     // MARK: Private methods
     private func slideLeft() {
-        
         animatedView.animation = "slideLeft"
         animatedView.curve = "easeInOut"
         
         animatedView.force = 2.2
         animatedView.duration = 0.5
         animatedView.delay = 0.9
-        animatedView.damping = 0.1
-        animatedView.velocity = 0.1
-        animatedView.rotate = -0.1
+        
+        animatedView.animate()
+    }
+    
+    private func pop() {
+        animatedView.animation = "pop"
+        animatedView.curve = "easeOutCubic"
+        
+        animatedView.force = 1
+        animatedView.duration = 1.5
+        animatedView.delay = 0.6
         
         animatedView.animate()
     }

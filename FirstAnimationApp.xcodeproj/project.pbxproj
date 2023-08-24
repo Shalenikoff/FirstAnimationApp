@@ -15,6 +15,7 @@
 		2BBDC3632A97EEE600A6F27F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBDC3612A97EEE600A6F27F /* LaunchScreen.storyboard */; };
 		2BBDC36C2A97EFE700A6F27F /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 2BBDC36B2A97EFE700A6F27F /* SpringAnimation */; };
 		2BBDC36E2A98017B00A6F27F /* Extention + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBDC36D2A98017B00A6F27F /* Extention + UIButton.swift */; };
+		2BBDC3702A980BA700A6F27F /* AnimationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBDC36F2A980BA700A6F27F /* AnimationStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2BBDC3622A97EEE600A6F27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BBDC3642A97EEE600A6F27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BBDC36D2A98017B00A6F27F /* Extention + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention + UIButton.swift"; sourceTree = "<group>"; };
+		2BBDC36F2A980BA700A6F27F /* AnimationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +65,38 @@
 				2BBDC3562A97EEE500A6F27F /* AppDelegate.swift */,
 				2BBDC3582A97EEE500A6F27F /* SceneDelegate.swift */,
 				2BBDC35A2A97EEE500A6F27F /* ViewController.swift */,
-				2BBDC35C2A97EEE500A6F27F /* Main.storyboard */,
+				2BBDC3732A980D6800A6F27F /* Storyboards */,
 				2BBDC35F2A97EEE600A6F27F /* Assets.xcassets */,
-				2BBDC3612A97EEE600A6F27F /* LaunchScreen.storyboard */,
 				2BBDC3642A97EEE600A6F27F /* Info.plist */,
-				2BBDC36D2A98017B00A6F27F /* Extention + UIButton.swift */,
+				2BBDC3722A980D5600A6F27F /* Extentions */,
+				2BBDC3712A980D4B00A6F27F /* Model */,
 			);
 			path = FirstAnimationApp;
+			sourceTree = "<group>";
+		};
+		2BBDC3712A980D4B00A6F27F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BBDC36F2A980BA700A6F27F /* AnimationStack.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BBDC3722A980D5600A6F27F /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				2BBDC36D2A98017B00A6F27F /* Extention + UIButton.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		2BBDC3732A980D6800A6F27F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2BBDC3612A97EEE600A6F27F /* LaunchScreen.storyboard */,
+				2BBDC35C2A97EEE500A6F27F /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBDC3702A980BA700A6F27F /* AnimationStack.swift in Sources */,
 				2BBDC36E2A98017B00A6F27F /* Extention + UIButton.swift in Sources */,
 				2BBDC35B2A97EEE500A6F27F /* ViewController.swift in Sources */,
 				2BBDC3572A97EEE500A6F27F /* AppDelegate.swift in Sources */,
