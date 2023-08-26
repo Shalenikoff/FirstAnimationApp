@@ -34,6 +34,13 @@ class ViewController: UIViewController {
         animationButton.backgroundColor = .black
         animationButton.tintColor = .white
         animationButton.layer.cornerRadius = 10
+        animationButton.setTitle("Play animation", for: .normal)
+        
+        presetLabel.text = "Preset name"
+        curveLabel.text = "Curve name"
+        forceLabel.text = "Force number"
+        durationLabel.text = "Duration time"
+        delayLabel.text = "Delay time"
     }
 
     // MARK: Actions
@@ -41,20 +48,10 @@ class ViewController: UIViewController {
     @IBAction func animationButtonPressed(_ sender: SpringButton) {
         sender.pulsate()
         
-        
-        animatedView.animation = chosedAnimation.preset
-        animatedView.curve = chosedAnimation.curve
-        animatedView.force = chosedAnimation.force
-        animatedView.duration = chosedAnimation.duration
-        animatedView.delay = chosedAnimation.delay
-        
-        presetLabel.text = "Preset: \(chosedAnimation.preset)"
-        curveLabel.text = "Curve: \(chosedAnimation.curve)"
-        forceLabel.text = "Force: \(chosedAnimation.force)"
-        durationLabel.text = "Force: \(chosedAnimation.duration)"
-        delayLabel.text = "Delay: \(chosedAnimation.delay)"
-        
+        updateAnimationInfo()
         animatedView.animate()
+        
+        contstructNextAnimation()
     }
     
 }
@@ -68,5 +65,26 @@ extension ViewController {
         durationLabel.textColor = .white
         delayLabel.textColor = .white
     }
+    
+    private func contstructNextAnimation() {
+        chosedAnimation = Animation.getRandomAnimation()
+        animationButton.setTitle("Play \(chosedAnimation.preset)", for: .normal)
+    }
+    
+    private func updateAnimationInfo() {
+        animatedView.animation = chosedAnimation.preset
+        animatedView.curve = chosedAnimation.curve
+        animatedView.force = chosedAnimation.force
+        animatedView.duration = chosedAnimation.duration
+        animatedView.delay = chosedAnimation.delay
+        
+        presetLabel.text = "Preset: \(chosedAnimation.preset)"
+        curveLabel.text = "Curve: \(chosedAnimation.curve)"
+        forceLabel.text = "Force: \(String(format: "%.3f", chosedAnimation.force))"
+        durationLabel.text = "Force: \(String(format: "%.3f", chosedAnimation.duration))"
+        delayLabel.text = "Delay: \(String(format: "%.3f", chosedAnimation.delay))"
+    }
+    
+
 }
 
