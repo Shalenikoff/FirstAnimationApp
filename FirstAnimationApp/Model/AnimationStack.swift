@@ -17,8 +17,8 @@ struct Animation {
     
     static func getRandomAnimation() -> Animation {
         
-        let presets = DataManager.shared.presets.randomElement()
-        let curves = DataManager.shared.curve.randomElement()
+        let presets = DataManager.shared.presets.randomElement() ?? ""
+        let curves = DataManager.shared.curve.randomElement() ?? ""
         let forces = Double.random(in: DataManager.shared.force)
         let durations = Double.random(in: DataManager.shared.duration)
         let delays = Double.random(in: DataManager.shared.delay)

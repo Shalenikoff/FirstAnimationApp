@@ -11,7 +11,7 @@ import SpringAnimation
 class DataManager {
     static let shared = DataManager()
     
-    let presets: [String] = [
+    var presets: [String] = [
         "pop",
         "slideLeft",
         "slideRight",
@@ -41,7 +41,7 @@ class DataManager {
         "swing"
     ]
     
-    let curve: [String] = [
+    var curve: [String] = [
         "easeIn",
         "easeOut",
         "easeInOut",
