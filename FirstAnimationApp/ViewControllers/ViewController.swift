@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var animationButton: SpringButton!
     
+    var chosedAnimation: Animation!
+    
     // MARK: LyfeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class ViewController: UIViewController {
         
         animatedView.backgroundColor = .black
         animatedView.layer.cornerRadius = 10
-        changedLabelTextColor()
+        changeLabelTextColor()
         
         animationButton.backgroundColor = .black
         animationButton.tintColor = .white
@@ -39,42 +41,23 @@ class ViewController: UIViewController {
     @IBAction func animationButtonPressed(_ sender: SpringButton) {
         sender.pulsate()
         
-        pop()
-        
-    }
-    
-    // MARK: Private methods
-    private func slideLeft() {
-        animatedView.animation = "slideLeft"
-        animatedView.curve = "easeInOut"
-        
-        animatedView.force = 2.2
-        animatedView.duration = 0.5
-        animatedView.delay = 0.9
+        animatedView.animation = chosedAnimation.preset
+        animatedView.curve = chosedAnimation.curve
+        animatedView.force = chosedAnimation.force
+        animatedView.duration = chosedAnimation.duration
+        animatedView.delay = chosedAnimation.delay
         
         animatedView.animate()
+        
     }
     
-    private func pop() {
-        animatedView.animation = "pop"
-        animatedView.curve = "easeOutCubic"
-        
-        animatedView.force = 1
-        animatedView.duration = 1.5
-        animatedView.delay = 0.6
-        
-        animatedView.animate()
-    }
-    
-    
-
 }
 
 
 
 extension ViewController {
     
-    func changedLabelTextColor() {
+    private func changeLabelTextColor() {
         presetLabel.textColor = .white
         curveLabel.textColor = .white
         forceLabel.textColor = .white
