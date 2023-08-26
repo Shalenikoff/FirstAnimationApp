@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var animationButton: SpringButton!
     
-    var chosedAnimation: Animation!
+    var chosedAnimation = Animation.getRandomAnimation()
     
     // MARK: LyfeCycle
     override func viewDidLoad() {
@@ -41,19 +41,23 @@ class ViewController: UIViewController {
     @IBAction func animationButtonPressed(_ sender: SpringButton) {
         sender.pulsate()
         
+        
         animatedView.animation = chosedAnimation.preset
         animatedView.curve = chosedAnimation.curve
         animatedView.force = chosedAnimation.force
         animatedView.duration = chosedAnimation.duration
         animatedView.delay = chosedAnimation.delay
         
-        animatedView.animate()
+        presetLabel.text = "Preset: \(chosedAnimation.preset)"
+        curveLabel.text = "Curve: \(chosedAnimation.curve)"
+        forceLabel.text = "Force: \(chosedAnimation.force)"
+        durationLabel.text = "Force: \(chosedAnimation.duration)"
+        delayLabel.text = "Delay: \(chosedAnimation.delay)"
         
+        animatedView.animate()
     }
     
 }
-
-
 
 extension ViewController {
     
@@ -64,7 +68,5 @@ extension ViewController {
         durationLabel.textColor = .white
         delayLabel.textColor = .white
     }
-    
-    
 }
 
